@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="h1-box">
+            <h1>Xpense Tracker</h1>
+        </div>
+        <div class="money-container">
+            <div class="balance-container">
+                <p>Your Balance</p>
+                <h2 id="balance">$2200</h2>
+            </div>
+            <div class="income-and-expense-container">
+                    <div class="income">
+                        <p>Income</p>
+                        <p>$1000</p>
+                    </div>
+                    <div class="expense">
+                        <p>Expenses</p>
+                        <p>$2,500</p>
+                    </div>
+            </div>
+        </div>
+        <div class="transaction-and-detail-container">
+            <div class="transaction-text-box">
+                <h2>Transactions</h2>
+            </div>
+            <div class="history-and-add-container">
+                <div class="history">
+                    <!-- <div class="item">
+                        <p>Airpods</p>
+                        <p>200$</p>             I commented this section out to keep in mind what to do in script.js
+                        <button>X</button>
+                    </div> -->
+                </div>
+                <div class="transactions">
+                    <div class="transaction-box">
+                        <h2>Add Transaction</h2>
+                    </div>
+                    <div class="add-and-amount-details">
+                        <div class="product-box">
+                            <p>Description</p>
+                            <input type="text" name="" id="productbar" placeholder="Enter Product" required>
+                        </div>
+                        <div class="amount-box">
+                            <p>Amount</p>
+                            <input type="number" name="" id="amountbar" placeholder="Enter amount" required>
+                        </div>
+                        <div class="add-box">
+                            <button id="add">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

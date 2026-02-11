@@ -1,0 +1,236 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle,rgba(25, 227, 193, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 16px;
+    box-shadow: 1px 1px 20px rgba(0,0,0,0.25);
+    padding: 20px;
+    background: #fff;
+    margin-top: 50px;
+    max-width: 100vw; /* Allow container to shrink on smaller screens */
+}
+
+.money-container {
+    background: linear-gradient(135deg, rgb(54, 250, 54),cyan);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%; /* Make width responsive */
+    max-width: 500px;
+    border-radius: 16px;
+    padding: 10px;
+}
+
+.balance-container p {
+    font-size: clamp(1rem, 2.5vw, 1.5rem); /* Responsive text */
+}
+
+.balance-container h2 {
+    font-size: clamp(2rem, 5vw, 3rem); /* Responsive heading */
+}
+
+.income-and-expense-container {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.3rem;
+    width: 100%;
+    flex-wrap: wrap; /* Allow wrapping if screen is narrow */
+    gap: 10px;
+}
+
+.income {
+    color: green;
+}
+
+.expense {
+    color: red;
+}
+
+.income, .expense {
+    flex: 1;
+    min-width: 120px;
+    max-width: 200px;
+    padding: 5px 15px;
+    border-radius: 16px;
+    background-color: white;
+    border: none;
+    text-align: center;
+}
+
+.transaction-and-detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+.transaction-text-box {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.history-and-add-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap; /* Allow the items to stack on small screens */
+    gap: 20px; /* Add spacing between items */
+}
+
+.history, .transactions {
+    flex: 1;
+    min-width: 280px;
+    max-width: 500px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.2);
+    border-radius: 16px;
+    padding: 10px;
+    height: 300px;
+    margin: 10px;
+}
+
+.history {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.item {
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.2);
+    /* height: 50px; */
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    /* width: 100%; */
+    padding: 8px;
+    text-overflow: clip;
+    border-radius: 4px;
+    transform: scale(0);
+    transition: width 0.3s ease, height 0.3s ease, transform 0.7s ease;
+}
+
+.item.show {
+    width: 100%;
+    height: 50px;
+    transform: scale(1);
+}
+
+.item button {
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    color: white;
+    border: none;
+    background-color: crimson;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+}
+
+.item p {
+    margin-right: 5px;
+}
+
+.item button:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+#amountbar, #productbar {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    max-width: 280px;
+}
+
+.add-and-amount-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.product-box, .amount-box {
+    margin-bottom: 25px;
+}
+
+#add {
+    padding: 10px 50px;
+    font-weight: bold;
+    color: white;
+    background-color: green;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#add:hover {
+    background-color: rgb(16, 168, 16);
+}
+
+/* Scrollbar Styling */
+.history::-webkit-scrollbar {
+    width: 8px;
+}
+
+.history::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 16px;
+}
+
+.history::-webkit-scrollbar-thumb {
+    background: #888;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.history::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* === MEDIA QUERY for structural layout tweaks === */
+@media only screen and (max-width: 768px) {
+    .income-and-expense-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .history-and-add-container {
+        flex-direction: column;
+    }
+
+    .money-container {
+        width: 90%;
+    }
+
+    .history, .transactions {
+        height: auto;
+        max-height: 400px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
